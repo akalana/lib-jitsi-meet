@@ -2,6 +2,7 @@
 
 const child_process = require('child_process'); // eslint-disable-line camelcase
 const process = require('process');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 
 const minimize
@@ -16,12 +17,14 @@ const plugins = [
 
 if (minimize) {
     plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
-    plugins.push(new webpack.optimize.UglifyJsPlugin({
-        compress: {
-            warnings: true
-        },
+    plugins.push(new UglifyJsPlugin({
+        cache: true,
         extractComments: true,
-        sourceMap: true
+        parallel: true,
+        sourceMap: true,
+        uglifyOptions: {
+            warnings: true
+        }
     }));
 }
 
