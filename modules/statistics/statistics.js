@@ -121,6 +121,15 @@ Statistics.init = function(options) {
 };
 
 /**
+ * Sets a function to obtain wifi stats.
+ *
+ * @callback func - Delivers wifi stats results.
+ */
+Statistics.setWiFiStatsFunction = function(func) {
+    Statistics.getWiFiStats = func;
+};
+
+/**
  * The options to configure Statistics.
  * @typedef {Object} StatisticsOptions
  * @property {string} applicationName - The application name to pass to

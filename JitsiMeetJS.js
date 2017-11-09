@@ -472,5 +472,13 @@ export default {
         AuthUtil,
         RTCUIHelper,
         ScriptUtil
+    },
+
+    /**
+     * Sets a function to obtain wifi stats.
+     * @callback func - Delivers wifi stats results.
+     */
+    setWiFiStatsFunction(func) {
+        return Settings.setWiFiStatsFunction(func);
     }
 };
