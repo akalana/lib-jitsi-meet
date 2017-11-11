@@ -16,7 +16,7 @@ const CameraFacingMode = {
     /**
      * The mode which specifies the user-facing camera.
      */
-    USER: 'user'
+    USER: 'environment'
 };
 
 module.exports = CameraFacingMode;
